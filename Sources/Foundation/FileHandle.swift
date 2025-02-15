@@ -20,12 +20,12 @@ fileprivate let _read = Darwin.read(_:_:_:)
 fileprivate let _write = Darwin.write(_:_:_:)
 fileprivate let _close = Darwin.close(_:)
 #elseif canImport(Glibc)
-import Glibc
+@preconcurrency import Glibc
 fileprivate let _read = Glibc.read(_:_:_:)
 fileprivate let _write = Glibc.write(_:_:_:)
 fileprivate let _close = Glibc.close(_:)
 #elseif canImport(Musl)
-import Musl
+@preconcurrency import Musl
 fileprivate let _read = Musl.read(_:_:_:)
 fileprivate let _write = Musl.write(_:_:_:)
 fileprivate let _close = Musl.close(_:)

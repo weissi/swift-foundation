@@ -108,19 +108,19 @@ fileprivate let FOUNDATION_IPPROTO_TCP = IPPROTO_TCP
 #endif
 
 #if canImport(Glibc) && !os(OpenBSD) && !os(FreeBSD)
-import Glibc
+@preconcurrency import Glibc
 fileprivate let FOUNDATION_SOCK_STREAM = Int32(SOCK_STREAM.rawValue)
 fileprivate let FOUNDATION_IPPROTO_TCP = Int32(IPPROTO_TCP)
 #endif
 
 #if canImport(Musl)
-import Musl
+@preconcurrency import Musl
 fileprivate let FOUNDATION_SOCK_STREAM = Int32(SOCK_STREAM)
 fileprivate let FOUNDATION_IPPROTO_TCP = Int32(IPPROTO_TCP)
 #endif
 
 #if canImport(Glibc) && (os(OpenBSD) || os(FreeBSD))
-import Glibc
+@preconcurrency import Glibc
 fileprivate let FOUNDATION_SOCK_STREAM = Int32(SOCK_STREAM)
 fileprivate let FOUNDATION_IPPROTO_TCP = Int32(IPPROTO_TCP)
 fileprivate let INADDR_ANY: in_addr_t = 0

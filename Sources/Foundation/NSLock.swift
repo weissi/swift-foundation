@@ -10,7 +10,7 @@
 @_implementationOnly import CoreFoundation
 
 #if canImport(Glibc)
-import Glibc
+@preconcurrency import Glibc
 #elseif canImport(Bionic)
 import Bionic
 #endif

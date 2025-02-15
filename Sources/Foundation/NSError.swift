@@ -13,7 +13,7 @@
 #if canImport(Darwin)
 import Darwin
 #elseif canImport(Glibc)
-import Glibc
+@preconcurrency import Glibc
 #elseif canImport(CRT)
 import CRT
 #elseif canImport(Android)

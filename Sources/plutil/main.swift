@@ -11,10 +11,10 @@ import Darwin
 import SwiftFoundation
 #elseif canImport(Glibc)
 import Foundation
-import Glibc
+@preconcurrency import Glibc
 #elseif canImport(Musl)
 import Foundation
-import Musl
+@preconcurrency import Musl
 #elseif canImport(Bionic)
 import Foundation
 import Bionic
